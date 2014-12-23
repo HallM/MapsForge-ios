@@ -1,0 +1,28 @@
+/*
+ * Copyright 2014 Matthew Hall
+ *
+ * This program is free software: you can redistribute it and/or modify it under the
+ * terms of the GNU Lesser General Public License as published by the Free Software
+ * Foundation, either version 3 of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+ * PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License along with
+ * this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#import <Foundation/Foundation.h>
+#import "GestureListener.h"
+#import "org/mapsforge/map/model/MapViewDimension.h"
+
+@interface DoubleTapListener : GestureListener {
+    OrgMapsforgeMapModelMapViewDimension *mapViewDimension;
+}
+
+- (id)initWithMapPosition:(OrgMapsforgeMapModelMapViewPosition*)mapPosition andMapDimension:(OrgMapsforgeMapModelMapViewDimension*)mapDimension;
+
+- (void)handleDoubleTap:(UITapGestureRecognizer*)tapGesture;
+
+@end

@@ -19,6 +19,8 @@
 #import "org/mapsforge/core/model/Point.h"
 #import "IOSGraphicFactory.h"
 
+#import "IOSPrimitiveArray.h"
+
 #import <CoreText/CoreText.h>
 
 @implementation IOSPaint

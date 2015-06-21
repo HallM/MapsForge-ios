@@ -1,0 +1,3 @@
+[submodule "lib/mapsforge"]
+	path = lib/mapsforge
+	url = git://github.com/Crazy50/mapsforge.git

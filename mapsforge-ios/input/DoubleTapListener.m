@@ -42,7 +42,7 @@
     [projection release];
     projection = nil;
     
-    OrgMapsforgeCoreModelPoint *center = [mapViewDimension->dimension_ getCenter];
+    OrgMapsforgeCoreModelPoint *center = [[mapViewDimension getDimension] getCenter];
     jbyte zoomLevelDiff = 1;
     double moveHorizontal = (center->x_ - location.x) / 2.f;
     double moveVertical = (center->y_ - location.y) / 2.f;

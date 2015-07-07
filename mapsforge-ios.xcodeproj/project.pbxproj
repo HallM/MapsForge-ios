@@ -3129,11 +3129,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 952B99371B36605900597D85 /* Build configuration list for PBXNativeTarget "mapsforge-ios" */;
 			buildPhases = (
-				952B9FB81B3664D400597D85 /* ShellScript */,
+				952B9FB81B3664D400597D85 /* Transpile Java Code */,
 				952B991F1B36605900597D85 /* Sources */,
 				952B99201B36605900597D85 /* Frameworks */,
 				952B99211B36605900597D85 /* CopyFiles */,
 				952BA2AF1B367EF700597D85 /* Headers */,
+				959C7F2A1B37A8AD00CD4E16 /* Copy dependeny headers */,
 			);
 			buildRules = (
 			);
@@ -3176,18 +3177,33 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		952B9FB81B3664D400597D85 /* ShellScript */ = {
+		952B9FB81B3664D400597D85 /* Transpile Java Code */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Transpile Java Code";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "tmpDir=${SRCROOT}/transpiled/.tmp\nmkdir $tmpDir\n\ncp -r ${SRCROOT}/lib/mapsforge/mapsforge-core/src/main/java/org $tmpDir/\ncp -r ${SRCROOT}/lib/mapsforge/mapsforge-map/src/main/java/org $tmpDir/\ncp -r ${SRCROOT}/lib/mapsforge/mapsforge-map-reader/src/main/java/org $tmpDir/\n\ncd $tmpDir\nrm -rf com\njfiles=`find . -name \"*.java\"`\n\n${HOME}/j2objc/j2objc -d ../ $jfiles\ncd ../..\n\nrm -rf $tmpDir\n";
+		};
+		959C7F2A1B37A8AD00CD4E16 /* Copy dependeny headers */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy dependeny headers";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# copy all the transpiled headers\nfind $(SRCROOT)/transpiled -name \\*.h cp -a {} $(PUBLIC_HEADERS_FOLDER_PATH) \\;\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

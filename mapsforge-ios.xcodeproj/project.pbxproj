@@ -222,6 +222,7 @@
 		952BA2BE1B367F4A00597D85 /* ScaleListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 952B9C7E1B3661AF00597D85 /* ScaleListener.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		952BA2BF1B367F4A00597D85 /* AssetRenderTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 952B9C821B3661AF00597D85 /* AssetRenderTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		952BA2C01B367F4A00597D85 /* IOSMapView.h in Headers */ = {isa = PBXBuildFile; fileRef = 952B9C861B3661AF00597D85 /* IOSMapView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D376084E1B7CA47800589483 /* MFAliases.h in Headers */ = {isa = PBXBuildFile; fileRef = D376084D1B7CA47800589483 /* MFAliases.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -1420,6 +1421,7 @@
 		952BA2AD1B36797100597D85 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		D37608441B7C924F00589483 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		D37608461B7C925300589483 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		D376084D1B7CA47800589483 /* MFAliases.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAliases.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1459,6 +1461,7 @@
 		952B99251B36605900597D85 /* mapsforge-ios */ = {
 			isa = PBXGroup;
 			children = (
+				D376084D1B7CA47800589483 /* MFAliases.h */,
 				952B993D1B3661AD00597D85 /* assets */,
 				952B9C601B3661AF00597D85 /* graphics */,
 				952B9C751B3661AF00597D85 /* input */,
@@ -3118,6 +3121,7 @@
 				952BA2B41B367F3300597D85 /* IOSPaint.h in Headers */,
 				952BA2B21B367F3300597D85 /* IOSGraphicFactory.h in Headers */,
 				952BA2BD1B367F4A00597D85 /* PanListener.h in Headers */,
+				D376084E1B7CA47800589483 /* MFAliases.h in Headers */,
 				952BA2B01B367F2700597D85 /* IOSBitmap.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

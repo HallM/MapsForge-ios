@@ -17,4 +17,27 @@
 
 @implementation IOSTileBitmap
 
+-(void)setExpirationWithLong:(jlong)expiration
+{
+    _expiration = expiration;
+}
+
+-(void)setTimestampWithLong:(jlong)timestamp
+{
+    _timestamp = timestamp;
+}
+
+-(jlong)getTimestamp
+{
+    return _timestamp;
+}
+
+-(BOOL)isExpired
+{
+    if (_expiration < _timestamp)
+        return NO;
+    else
+        return YES;
+}
+
 @end

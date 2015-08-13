@@ -119,6 +119,18 @@
     return [[[IOSPointTextContainer alloc] initWithOrgMapsforgeCoreModelPoint:xy withInt:priority withNSString:text withOrgMapsforgeCoreGraphicsPaint:paintFront withOrgMapsforgeCoreGraphicsPaint:paintBack withOrgMapsforgeCoreMapelementsSymbolContainer:symbolContainer withOrgMapsforgeCoreGraphicsPositionEnum:position withInt:maxTextWidth] autorelease];
 }
 
+- (OrgMapsforgeCoreMapelementsPointTextContainer *)createPointTextContainerWithOrgMapsforgeCoreModelPoint:(OrgMapsforgeCoreModelPoint *)xy
+                                                                  withOrgMapsforgeCoreGraphicsDisplayEnum:(OrgMapsforgeCoreGraphicsDisplayEnum *)display
+                                                                                                  withInt:(jint)priority
+                                                                                             withNSString:(NSString *)text
+                                                                        withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)paintFront
+                                                                        withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)paintBack
+                                                           withOrgMapsforgeCoreMapelementsSymbolContainer:(OrgMapsforgeCoreMapelementsSymbolContainer *)symbolContainer
+                                                                 withOrgMapsforgeCoreGraphicsPositionEnum:(OrgMapsforgeCoreGraphicsPositionEnum *)position
+                                                                                                  withInt:(jint)maxTextWidth {
+    return [[[IOSPointTextContainer alloc] initWithOrgMapsforgeCoreModelPoint:xy withOrgMapsforgeCoreGraphicsDisplayEnum:display withInt:priority withNSString:text withOrgMapsforgeCoreGraphicsPaint:paintFront withOrgMapsforgeCoreGraphicsPaint:paintBack withOrgMapsforgeCoreMapelementsSymbolContainer:symbolContainer withOrgMapsforgeCoreGraphicsPositionEnum:position withInt:maxTextWidth] autorelease];
+}
+
 - (id<OrgMapsforgeCoreGraphicsResourceBitmap>)createResourceBitmapWithJavaIoInputStream:(JavaIoInputStream *)inputStream
                                                                                 withInt:(jint)hash_ {
     IOSByteArray *fileData = [IOSByteArray arrayWithLength:[inputStream available]];

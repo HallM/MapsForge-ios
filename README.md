@@ -15,7 +15,7 @@ You'll wave to add Maven in your $PATH !
 ## Compilation Guide
 
 1. Download or clone the Github project.
-2. Get the last stable version of MapsForge (https://github.com/mapsforge/mapsforge). This project supports the 0.5.2 stable build. Copy the folder into the lib/mapsforge directory of this Github project.
+2. Get the last stable version of MapsForge (https://github.com/mapsforge/mapsforge). This project supports the 0.5.1 stable build. Copy the folder into the lib/mapsforge directory on this Github project.
 3. Download J2OBJC, compile it and copy the `dist` directory into your HOME/j2objc. This leads to `/Users/<your_username>/j2objc`. Remember to copy the whole directory, not only the executable.
 4. Build the project.
 5. You'll find the library `.a`and the headers file in the build folder. Search for `libmapsforge-ios.a`and `libmapsforge-ios-headers`.

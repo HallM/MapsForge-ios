@@ -222,7 +222,7 @@
 		952BA2BE1B367F4A00597D85 /* ScaleListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 952B9C7E1B3661AF00597D85 /* ScaleListener.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		952BA2BF1B367F4A00597D85 /* AssetRenderTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 952B9C821B3661AF00597D85 /* AssetRenderTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		952BA2C01B367F4A00597D85 /* IOSMapView.h in Headers */ = {isa = PBXBuildFile; fileRef = 952B9C861B3661AF00597D85 /* IOSMapView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D376084E1B7CA47800589483 /* MFAliases.h in Headers */ = {isa = PBXBuildFile; fileRef = D376084D1B7CA47800589483 /* MFAliases.h */; };
+		D376084E1B7CA47800589483 /* MFAliases.h in Headers */ = {isa = PBXBuildFile; fileRef = D376084D1B7CA47800589483 /* MFAliases.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -3119,9 +3119,9 @@
 				952BA2BC1B367F4A00597D85 /* LongPressListener.h in Headers */,
 				952BA2BF1B367F4A00597D85 /* AssetRenderTheme.h in Headers */,
 				952BA2B41B367F3300597D85 /* IOSPaint.h in Headers */,
+				D376084E1B7CA47800589483 /* MFAliases.h in Headers */,
 				952BA2B21B367F3300597D85 /* IOSGraphicFactory.h in Headers */,
 				952BA2BD1B367F4A00597D85 /* PanListener.h in Headers */,
-				D376084E1B7CA47800589483 /* MFAliases.h in Headers */,
 				952BA2B01B367F2700597D85 /* IOSBitmap.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3511,7 +3511,7 @@
 					"-ljre_emul",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_NAME)-headers/headers/$(PROJECT_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_NAME)-headers/$(PROJECT_NAME)";
 				SKIP_INSTALL = YES;
 				STRIP_STYLE = "non-global";
 			};
@@ -3536,7 +3536,7 @@
 					"-ljre_emul",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_NAME)-headers/headers/$(PROJECT_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_NAME)-headers/$(PROJECT_NAME)";
 				SKIP_INSTALL = YES;
 				STRIP_STYLE = "non-global";
 			};

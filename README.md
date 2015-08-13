@@ -24,5 +24,7 @@ You'll wave to add Maven in your $PATH and the J2OBJC directory in the variable 
 
 1. Copy the `.a`library and the headers into the new project.
 2. In *Build Phases*, add the `.a` library file to *Link Binaries With Librairies*.
-3. In *Build Settings*, search the *Header Search Path* and add `$(SRCROOT)/YourProjectName/YourLibraryFolder/`.
-4. Build your project. You can make references to headers of the library by calling `org/mapsforge/path/to/the/file.h`.
+3. In *Build Settings*, search the *Header Search Path* and add `$(SRCROOT)/YourProjectName/YourLibraryFolder/`. Set this recursive.
+4. Build your project. You can make references to headers of the library by calling `mapsforge-ios/org/mapsforge/path/to/the/file.h`.
+
+Beware if you are using J2OBJC for other librairies or for your current project, the library headers already contains java headers for your convenience. If you already specify J2OBJC headers, you can change the *Header Search Path* and set `$(SRCROOT)/YourProjectName/YourLibraryFolder/mapsforge-ios` to only include the library headers and not the J2OBJC headers.

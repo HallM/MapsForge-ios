@@ -5,7 +5,7 @@ An iOS port of the Java based MapsForge OSM mapping library using J2ObjC and nat
 
 ## Support
 
-Application supports the MapsForge build 0.5.1-rc4 (https://github.com/mapsforge/mapsforge/tree/0.5.1-rc4).
+Application supports the MapsForge build 0.5.1 (https://github.com/mapsforge/mapsforge/tree/0.5.1).
 
 ## Dependencies
 

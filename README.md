@@ -3,6 +3,10 @@ An iOS port of the Java based MapsForge OSM mapping library using J2ObjC and nat
 
 *MapsForge is a library to render vector map tiles from OSM on Java platforms. You can see here https://github.com/mapsforge/mapsforge.*
 
+## Support
+
+Application supports the MapsForge build 0.5.1-rc4 (https://github.com/mapsforge/mapsforge/tree/0.5.1-rc4).
+
 ## Dependencies
 
 You will need some dependancies to make this works:

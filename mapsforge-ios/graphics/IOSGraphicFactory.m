@@ -31,8 +31,31 @@
 #import "IOSResourceBitmap.h"
 #import "IOSSvgBitmap.h"
 #import "IOSTileBitmap.h"
+#import <UIKit/UIKit.h>
+#import "org/mapsforge/map/model/DisplayModel.h"
+
+IOSGraphicFactory* __singletonIOSGraphicFactory = nil;
 
 @implementation IOSGraphicFactory
+
++(IOSGraphicFactory*)instance
+{
+    if (__singletonIOSGraphicFactory == nil)
+        __singletonIOSGraphicFactory = [[IOSGraphicFactory alloc] init];
+    return __singletonIOSGraphicFactory;
+}
+
+-(id)init
+{
+    self = [super init];
+    if (self)
+    {
+        float scaleFactor = [UIScreen mainScreen].scale;
+        [OrgMapsforgeMapModelDisplayModel setDeviceScaleFactorWithFloat:scaleFactor];
+        
+    }
+    return self;
+}
 
 - (id<OrgMapsforgeCoreGraphicsBitmap>)createBitmapWithInt:(jint)width
                                                   withInt:(jint)height {

@@ -20,5 +20,9 @@
 #import "org/mapsforge/core/graphics/TileBitmap.h"
 
 @interface IOSTileBitmap : IOSBitmap <OrgMapsforgeCoreGraphicsTileBitmap>
+{
+    long _timestamp;
+    long _expiration;
+}
 
 @end

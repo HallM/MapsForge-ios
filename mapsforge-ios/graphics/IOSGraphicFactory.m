@@ -31,8 +31,31 @@
 #import "IOSResourceBitmap.h"
 #import "IOSSvgBitmap.h"
 #import "IOSTileBitmap.h"
+#import <UIKit/UIKit.h>
+#import "org/mapsforge/map/model/DisplayModel.h"
+
+IOSGraphicFactory* __singletonIOSGraphicFactory = nil;
 
 @implementation IOSGraphicFactory
+
++(IOSGraphicFactory*)instance
+{
+    if (__singletonIOSGraphicFactory == nil)
+        __singletonIOSGraphicFactory = [[IOSGraphicFactory alloc] init];
+    return __singletonIOSGraphicFactory;
+}
+
+-(id)init
+{
+    self = [super init];
+    if (self)
+    {
+        float scaleFactor = [UIScreen mainScreen].scale;
+        [OrgMapsforgeMapModelDisplayModel setDeviceScaleFactorWithFloat:scaleFactor];
+        
+    }
+    return self;
+}
 
 - (id<OrgMapsforgeCoreGraphicsBitmap>)createBitmapWithInt:(jint)width
                                                   withInt:(jint)height {
@@ -117,6 +140,18 @@
                                                                  withOrgMapsforgeCoreGraphicsPositionEnum:(OrgMapsforgeCoreGraphicsPositionEnum *)position
                                                                                                   withInt:(jint)maxTextWidth {
     return [[[IOSPointTextContainer alloc] initWithOrgMapsforgeCoreModelPoint:xy withInt:priority withNSString:text withOrgMapsforgeCoreGraphicsPaint:paintFront withOrgMapsforgeCoreGraphicsPaint:paintBack withOrgMapsforgeCoreMapelementsSymbolContainer:symbolContainer withOrgMapsforgeCoreGraphicsPositionEnum:position withInt:maxTextWidth] autorelease];
+}
+
+- (OrgMapsforgeCoreMapelementsPointTextContainer *)createPointTextContainerWithOrgMapsforgeCoreModelPoint:(OrgMapsforgeCoreModelPoint *)xy
+                                                                  withOrgMapsforgeCoreGraphicsDisplayEnum:(OrgMapsforgeCoreGraphicsDisplayEnum *)display
+                                                                                                  withInt:(jint)priority
+                                                                                             withNSString:(NSString *)text
+                                                                        withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)paintFront
+                                                                        withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)paintBack
+                                                           withOrgMapsforgeCoreMapelementsSymbolContainer:(OrgMapsforgeCoreMapelementsSymbolContainer *)symbolContainer
+                                                                 withOrgMapsforgeCoreGraphicsPositionEnum:(OrgMapsforgeCoreGraphicsPositionEnum *)position
+                                                                                                  withInt:(jint)maxTextWidth {
+    return [[[IOSPointTextContainer alloc] initWithOrgMapsforgeCoreModelPoint:xy withOrgMapsforgeCoreGraphicsDisplayEnum:display withInt:priority withNSString:text withOrgMapsforgeCoreGraphicsPaint:paintFront withOrgMapsforgeCoreGraphicsPaint:paintBack withOrgMapsforgeCoreMapelementsSymbolContainer:symbolContainer withOrgMapsforgeCoreGraphicsPositionEnum:position withInt:maxTextWidth] autorelease];
 }
 
 - (id<OrgMapsforgeCoreGraphicsResourceBitmap>)createResourceBitmapWithJavaIoInputStream:(JavaIoInputStream *)inputStream

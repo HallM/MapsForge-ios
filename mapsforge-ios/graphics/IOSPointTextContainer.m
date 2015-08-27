@@ -27,7 +27,7 @@
 
 @implementation IOSPointTextContainer
 
-- (id)initWithOrgMapsforgeCoreModelPoint:(OrgMapsforgeCoreModelPoint *)point
+- (void)withOrgMapsforgeCoreModelPoint:(OrgMapsforgeCoreModelPoint *)point
                                            withInt:(jint)priority
                                       withNSString:(NSString *)text
                  withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)paintFront
@@ -35,8 +35,8 @@
     withOrgMapsforgeCoreMapelementsSymbolContainer:(OrgMapsforgeCoreMapelementsSymbolContainer *)symbolContainer
           withOrgMapsforgeCoreGraphicsPositionEnum:(OrgMapsforgeCoreGraphicsPositionEnum *)position
                                            withInt:(jint)maxTextWidth {
-    self = [super initWithOrgMapsforgeCoreModelPoint:point withInt:priority withNSString:text withOrgMapsforgeCoreGraphicsPaint:paintFront withOrgMapsforgeCoreGraphicsPaint:paintBack withOrgMapsforgeCoreMapelementsSymbolContainer:symbolContainer withOrgMapsforgeCoreGraphicsPositionEnum:position withInt:maxTextWidth];
-    if (self) {
+    //self = [super initWithOrgMapsforgeCoreModelPoint:point withInt:priority withNSString:text withOrgMapsforgeCoreGraphicsPaint:paintFront withOrgMapsforgeCoreGraphicsPaint:paintBack withOrgMapsforgeCoreMapelementsSymbolContainer:symbolContainer withOrgMapsforgeCoreGraphicsPositionEnum:position withInt:maxTextWidth];
+    //if (self) {
         boxWidth = self->textWidth_;
         boxHeight = self->textHeight_;
 
@@ -171,6 +171,31 @@
         }
         
         self->boundary_ = [[OrgMapsforgeCoreModelRectangle alloc] initWithDouble:left withDouble:top withDouble:right withDouble:bottom];
+    //}
+    //return self;
+}
+
+- (id)initWithOrgMapsforgeCoreModelPoint:(OrgMapsforgeCoreModelPoint *)point
+           withOrgMapsforgeCoreGraphicsDisplayEnum:(OrgMapsforgeCoreGraphicsDisplayEnum *)display
+                                           withInt:(jint)priority
+                                      withNSString:(NSString *)text
+                 withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)paintFront
+                 withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)paintBack
+    withOrgMapsforgeCoreMapelementsSymbolContainer:(OrgMapsforgeCoreMapelementsSymbolContainer *)symbolContainer
+          withOrgMapsforgeCoreGraphicsPositionEnum:(OrgMapsforgeCoreGraphicsPositionEnum *)position
+                                           withInt:(jint)maxTextWidth
+{
+    self = [super initWithOrgMapsforgeCoreModelPoint:(OrgMapsforgeCoreModelPoint *)point
+             withOrgMapsforgeCoreGraphicsDisplayEnum:(OrgMapsforgeCoreGraphicsDisplayEnum *)display
+                                             withInt:(jint)priority
+                                        withNSString:(NSString *)text
+                   withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)paintFront
+                   withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)paintBack
+      withOrgMapsforgeCoreMapelementsSymbolContainer:(OrgMapsforgeCoreMapelementsSymbolContainer *)symbolContainer
+            withOrgMapsforgeCoreGraphicsPositionEnum:(OrgMapsforgeCoreGraphicsPositionEnum *)position
+                                             withInt:(jint)maxTextWidth];
+    if (self) {
+        [self withOrgMapsforgeCoreModelPoint:point withInt:priority withNSString:text withOrgMapsforgeCoreGraphicsPaint:paintFront withOrgMapsforgeCoreGraphicsPaint:paintBack withOrgMapsforgeCoreMapelementsSymbolContainer:symbolContainer withOrgMapsforgeCoreGraphicsPositionEnum:position withInt:maxTextWidth];
     }
     return self;
 }

@@ -204,9 +204,7 @@
 		952BA2A31B36771500597D85 /* FpsCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 952BA13B1B36771400597D85 /* FpsCounter.m */; };
 		952BA2A51B36771500597D85 /* FrameBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 952BA13D1B36771400597D85 /* FrameBuffer.m */; };
 		952BA2A71B36771500597D85 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 952BA13F1B36771400597D85 /* MapView.m */; };
-		952BA2AA1B36793F00597D85 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 952BA2A91B36793F00597D85 /* libz.dylib */; };
 		952BA2AC1B36795300597D85 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952BA2AB1B36795300597D85 /* Security.framework */; };
-		952BA2AE1B36797100597D85 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 952BA2AD1B36797100597D85 /* libicucore.dylib */; };
 		952BA2B01B367F2700597D85 /* IOSBitmap.h in Headers */ = {isa = PBXBuildFile; fileRef = 952B9C611B3661AF00597D85 /* IOSBitmap.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		952BA2B11B367F3300597D85 /* IOSCanvas.h in Headers */ = {isa = PBXBuildFile; fileRef = 952B9C631B3661AF00597D85 /* IOSCanvas.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		952BA2B21B367F3300597D85 /* IOSGraphicFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 952B9C651B3661AF00597D85 /* IOSGraphicFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -224,6 +222,7 @@
 		952BA2BE1B367F4A00597D85 /* ScaleListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 952B9C7E1B3661AF00597D85 /* ScaleListener.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		952BA2BF1B367F4A00597D85 /* AssetRenderTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 952B9C821B3661AF00597D85 /* AssetRenderTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		952BA2C01B367F4A00597D85 /* IOSMapView.h in Headers */ = {isa = PBXBuildFile; fileRef = 952B9C861B3661AF00597D85 /* IOSMapView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D376084E1B7CA47800589483 /* MFAliases.h in Headers */ = {isa = PBXBuildFile; fileRef = D376084D1B7CA47800589483 /* MFAliases.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -1420,6 +1419,9 @@
 		952BA2A91B36793F00597D85 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		952BA2AB1B36795300597D85 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		952BA2AD1B36797100597D85 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		D37608441B7C924F00589483 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		D37608461B7C925300589483 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		D376084D1B7CA47800589483 /* MFAliases.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAliases.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1427,9 +1429,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				952BA2AE1B36797100597D85 /* libicucore.dylib in Frameworks */,
 				952BA2AC1B36795300597D85 /* Security.framework in Frameworks */,
-				952BA2AA1B36793F00597D85 /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1439,6 +1439,8 @@
 		952B991A1B36605900597D85 = {
 			isa = PBXGroup;
 			children = (
+				D37608461B7C925300589483 /* libz.tbd */,
+				D37608441B7C924F00589483 /* libicucore.tbd */,
 				952BA2AD1B36797100597D85 /* libicucore.dylib */,
 				952BA2AB1B36795300597D85 /* Security.framework */,
 				952BA2A91B36793F00597D85 /* libz.dylib */,
@@ -1459,6 +1461,7 @@
 		952B99251B36605900597D85 /* mapsforge-ios */ = {
 			isa = PBXGroup;
 			children = (
+				D376084D1B7CA47800589483 /* MFAliases.h */,
 				952B993D1B3661AD00597D85 /* assets */,
 				952B9C601B3661AF00597D85 /* graphics */,
 				952B9C751B3661AF00597D85 /* input */,
@@ -3116,6 +3119,7 @@
 				952BA2BC1B367F4A00597D85 /* LongPressListener.h in Headers */,
 				952BA2BF1B367F4A00597D85 /* AssetRenderTheme.h in Headers */,
 				952BA2B41B367F3300597D85 /* IOSPaint.h in Headers */,
+				D376084E1B7CA47800589483 /* MFAliases.h in Headers */,
 				952BA2B21B367F3300597D85 /* IOSGraphicFactory.h in Headers */,
 				952BA2BD1B367F4A00597D85 /* PanListener.h in Headers */,
 				952BA2B01B367F2700597D85 /* IOSBitmap.h in Headers */,
@@ -3203,7 +3207,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# copy all the transpiled headers\nfind $(SRCROOT)/transpiled -name \\*.h cp -a {} $(PUBLIC_HEADERS_FOLDER_PATH) \\;\n";
+			shellScript = "# copy all the transpiled headers\ncp -R $SRCROOT/transpiled/* $CONFIGURATION_BUILD_DIR/$PUBLIC_HEADERS_FOLDER_PATH\nfind $CONFIGURATION_BUILD_DIR/$PUBLIC_HEADERS_FOLDER_PATH -name '*.m' -type f -delete\n\n# copy java headers\ncp -R $HOME/j2objc/include/* $CONFIGURATION_BUILD_DIR/$PUBLIC_HEADERS_FOLDER_PATH/..\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -3507,7 +3511,7 @@
 					"-ljre_emul",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PROJECT_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_NAME)-headers/$(PROJECT_NAME)";
 				SKIP_INSTALL = YES;
 				STRIP_STYLE = "non-global";
 			};
@@ -3532,7 +3536,7 @@
 					"-ljre_emul",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PROJECT_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_NAME)-headers/$(PROJECT_NAME)";
 				SKIP_INSTALL = YES;
 				STRIP_STYLE = "non-global";
 			};

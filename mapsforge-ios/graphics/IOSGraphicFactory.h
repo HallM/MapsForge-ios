@@ -25,4 +25,6 @@
 
 + (jint)getIntColorFromEnum:(OrgMapsforgeCoreGraphicsColorEnum *)color;
 
++(IOSGraphicFactory*)instance;
+
 @end

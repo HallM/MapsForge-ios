@@ -14,6 +14,7 @@
  */
 
 #import "IOSCanvas.h"
+#import <UIKit/UIKit.h>
 #import <CoreText/CoreText.h>
 #import "org/mapsforge/core/model/Dimension.h"
 

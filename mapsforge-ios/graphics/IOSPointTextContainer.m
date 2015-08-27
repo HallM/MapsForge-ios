@@ -22,6 +22,7 @@
 #import "org/mapsforge/core/model/Point.h"
 #import "org/mapsforge/core/graphics/Position.h"
 
+#import <UIKit/UIKit.h>
 #import <CoreGraphics/CoreGraphics.h>
 #import <CoreText/CoreText.h>
 

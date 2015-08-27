@@ -21,6 +21,7 @@
 
 #import "IOSPrimitiveArray.h"
 
+#import <UIKit/UIKit.h>
 #import <CoreText/CoreText.h>
 
 @implementation IOSPaint

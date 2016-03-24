@@ -68,7 +68,7 @@
 }
 
 - (void)sharedInit {
-    graphicFactory = [[IOSGraphicFactory alloc] init];
+    graphicFactory = [IOSGraphicFactory instance];
     model = [[OrgMapsforgeMapModelModel alloc] init];
     
     frameBuffer = [[OrgMapsforgeMapViewFrameBuffer alloc] initWithOrgMapsforgeMapModelFrameBufferModel:model->frameBufferModel_ withOrgMapsforgeMapModelDisplayModel:model->displayModel_ withOrgMapsforgeCoreGraphicsGraphicFactory:graphicFactory];
@@ -188,6 +188,7 @@
 }
 
 - (void)drawRect:(CGRect)rect {
+    NSLog(@"draw");
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGSize cSize = self.frame.size;
     IOSCanvas *canvas = [[IOSCanvas alloc] initWithContext:context andSize:cSize];

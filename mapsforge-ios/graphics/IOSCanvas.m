@@ -28,7 +28,7 @@
 #import "IOSTileBitmap.h"
 #import "IOSGraphicFactory.h"
 
-//#define SHOWTILELINESDEBUG 1
+#define SHOWTILELINESDEBUG 1
 
 void shaderPatternDraw( void * info, CGContextRef context ) {
     if (info != NULL) {
@@ -41,6 +41,7 @@ void shaderPatternDraw( void * info, CGContextRef context ) {
 @implementation IOSCanvas
 
 - (id)init {
+//    NSLog(@"init plain");
     self = [super init];
     if (self) {
         size_ = CGSizeZero;
@@ -52,6 +53,7 @@ void shaderPatternDraw( void * info, CGContextRef context ) {
 }
 
 - (id)initWithContext:(CGContextRef)context andSize:(CGSize)size {
+//    NSLog(@"init with context");
     self = [super init];
     if (self) {
         size_ = size;
@@ -109,7 +111,8 @@ void shaderPatternDraw( void * info, CGContextRef context ) {
     }
 }
 
-// this one is not thread safe! Only use internally and surrounded by a thread safe one
+// this is not thread safe! Only use internally and surrounded by a thread safe one
+// it's just an internal function to be called by the others
 - (void)drawBitmap:(id<OrgMapsforgeCoreGraphicsBitmap>)bitmap left:(jint)left top:(jint)top {
     if (context_ == NULL) {
         return;
@@ -353,6 +356,7 @@ withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)paint {
     }
 }
 
+// this gets called by drawTextRotatedWithNSString but converted to an angle
 - (void)drawTextWithNSString:(NSString *)text
                      withInt:(jint)x
                      withInt:(jint)y
@@ -482,7 +486,7 @@ withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)paint {
         if (context_ == NULL) {
             return;
         }
-        NSLog(@"reset clip");
+//        NSLog(@"reset clip");
         //CGRect r = CGRectMake(0, 0, size_.width, size_.height);
         //CGContextClipToRect(context_, r);
     }
@@ -496,7 +500,22 @@ withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)paint {
         if (context_ == NULL) {
             return;
         }
-        NSLog(@"set clip %d,%d, %d,%d", left, top, width, height);
+//        NSLog(@"set clip %d,%d, %d,%d", left, top, width, height);
+        //CGRect r = CGRectMake(left, top, width, height);
+        //CGContextClipToRect(context_, r);
+    }
+}
+
+- (void)setClipDifferenceWithInt:(jint)left
+                         withInt:(jint)top
+                         withInt:(jint)width
+                         withInt:(jint)height {
+    
+    @synchronized (syncro) {
+        if (context_ == NULL) {
+            return;
+        }
+        //        NSLog(@"set clip %d,%d, %d,%d", left, top, width, height);
         //CGRect r = CGRectMake(left, top, width, height);
         //CGContextClipToRect(context_, r);
     }

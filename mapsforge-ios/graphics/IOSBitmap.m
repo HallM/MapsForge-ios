@@ -131,6 +131,7 @@
     if (bitmapContext_ == NULL) {
         return;
     }
+    NSLog(@"They wanted us to scale it");
     // TODO: do it
 }
 

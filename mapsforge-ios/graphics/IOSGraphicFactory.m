@@ -59,16 +59,19 @@ IOSGraphicFactory* __singletonIOSGraphicFactory = nil;
 
 - (id<OrgMapsforgeCoreGraphicsBitmap>)createBitmapWithInt:(jint)width
                                                   withInt:(jint)height {
+//    NSLog(@"create bitmap");
     return [[[IOSBitmap alloc] initWithSize:CGSizeMake(width, height) isTransparent:YES] autorelease];
 }
 
 - (id<OrgMapsforgeCoreGraphicsBitmap>)createBitmapWithInt:(jint)width
                                                   withInt:(jint)height
                                               withBoolean:(jboolean)isTransparent {
+//    NSLog(@"create bitmap2");
     return [[[IOSBitmap alloc] initWithSize:CGSizeMake(width, height) isTransparent:isTransparent] autorelease];
 }
 
 - (id<OrgMapsforgeCoreGraphicsCanvas>)createCanvas {
+//    NSLog(@"create canvas");
     return [[[IOSCanvas alloc] init] autorelease];
 }
 
@@ -124,22 +127,13 @@ IOSGraphicFactory* __singletonIOSGraphicFactory = nil;
 }
 
 - (id<OrgMapsforgeCoreGraphicsPaint>)createPaint {
+//    NSLog(@"create paint");
     return [[[IOSPaint alloc] init] autorelease];
 }
 
 - (id<OrgMapsforgeCoreGraphicsPath>)createPath {
+//    NSLog(@"create path");
     return [[[IOSPath alloc] init] autorelease];
-}
-
-- (OrgMapsforgeCoreMapelementsPointTextContainer *)createPointTextContainerWithOrgMapsforgeCoreModelPoint:(OrgMapsforgeCoreModelPoint *)xy
-                                                                                                  withInt:(jint)priority
-                                                                                             withNSString:(NSString *)text
-                                                                        withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)paintFront
-                                                                        withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)paintBack
-                                                           withOrgMapsforgeCoreMapelementsSymbolContainer:(OrgMapsforgeCoreMapelementsSymbolContainer *)symbolContainer
-                                                                 withOrgMapsforgeCoreGraphicsPositionEnum:(OrgMapsforgeCoreGraphicsPositionEnum *)position
-                                                                                                  withInt:(jint)maxTextWidth {
-    return [[[IOSPointTextContainer alloc] initWithOrgMapsforgeCoreModelPoint:xy withInt:priority withNSString:text withOrgMapsforgeCoreGraphicsPaint:paintFront withOrgMapsforgeCoreGraphicsPaint:paintBack withOrgMapsforgeCoreMapelementsSymbolContainer:symbolContainer withOrgMapsforgeCoreGraphicsPositionEnum:position withInt:maxTextWidth] autorelease];
 }
 
 - (OrgMapsforgeCoreMapelementsPointTextContainer *)createPointTextContainerWithOrgMapsforgeCoreModelPoint:(OrgMapsforgeCoreModelPoint *)xy
@@ -154,8 +148,10 @@ IOSGraphicFactory* __singletonIOSGraphicFactory = nil;
     return [[[IOSPointTextContainer alloc] initWithOrgMapsforgeCoreModelPoint:xy withOrgMapsforgeCoreGraphicsDisplayEnum:display withInt:priority withNSString:text withOrgMapsforgeCoreGraphicsPaint:paintFront withOrgMapsforgeCoreGraphicsPaint:paintBack withOrgMapsforgeCoreMapelementsSymbolContainer:symbolContainer withOrgMapsforgeCoreGraphicsPositionEnum:position withInt:maxTextWidth] autorelease];
 }
 
+
 - (id<OrgMapsforgeCoreGraphicsResourceBitmap>)createResourceBitmapWithJavaIoInputStream:(JavaIoInputStream *)inputStream
                                                                                 withInt:(jint)hash_ {
+//    NSLog(@"create resource bitmap");
     IOSByteArray *fileData = [IOSByteArray arrayWithLength:[inputStream available]];
     if ([inputStream readWithByteArray:fileData withInt:0 withInt:[inputStream available]] > 0) {
         NSData *data = [fileData toNSData];
@@ -176,6 +172,7 @@ IOSGraphicFactory* __singletonIOSGraphicFactory = nil;
 - (id<OrgMapsforgeCoreGraphicsTileBitmap>)createTileBitmapWithJavaIoInputStream:(JavaIoInputStream *)inputStream
                                                                         withInt:(jint)tileSize
                                                                     withBoolean:(jboolean)isTransparent {
+//    NSLog(@"create tilebitmap");
     NSMutableData *pngTile = [NSMutableData dataWithCapacity:32768];
     
     IOSByteArray *fileData = [IOSByteArray arrayWithLength:4096];
@@ -205,11 +202,13 @@ IOSGraphicFactory* __singletonIOSGraphicFactory = nil;
 
 - (id<OrgMapsforgeCoreGraphicsTileBitmap>)createTileBitmapWithInt:(jint)tileSize
                                                       withBoolean:(jboolean)isTransparent {
+//    NSLog(@"create tile bitmap 2");
     return [[[IOSTileBitmap alloc] initWithSize:CGSizeMake(tileSize, tileSize) isTransparent:isTransparent] autorelease];
 }
 
 - (JavaIoInputStream *)platformSpecificSourcesWithNSString:(NSString *)relativePathPrefix
                                               withNSString:(NSString *)src {
+//    NSLog(@"create platform source %@", src);
     NSRange rng = [src rangeOfString:@"assets:" options:NSBackwardsSearch];
     NSString *platformSource = rng.location != NSNotFound ? [src substringFromIndex:rng.location+rng.length] : src;
     
@@ -231,6 +230,7 @@ IOSGraphicFactory* __singletonIOSGraphicFactory = nil;
                                                                      withInt:(jint)percent
                                                                      withInt:(jint)hash_ {
     // TODO: need an SVG CoreGraphics-based renderer for iOS
+//    NSLog(@"create SVG canvas");
     return [self createResourceBitmapWithJavaIoInputStream:inputStream withInt:hash_];
     
     /*Leaving this commented code for now. Originally written for SVGKit, but had issues

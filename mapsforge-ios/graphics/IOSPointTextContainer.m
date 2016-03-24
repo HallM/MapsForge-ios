@@ -177,14 +177,14 @@
 }
 
 - (id)initWithOrgMapsforgeCoreModelPoint:(OrgMapsforgeCoreModelPoint *)point
-           withOrgMapsforgeCoreGraphicsDisplayEnum:(OrgMapsforgeCoreGraphicsDisplayEnum *)display
-                                           withInt:(jint)priority
-                                      withNSString:(NSString *)text
-                 withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)paintFront
-                 withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)paintBack
-    withOrgMapsforgeCoreMapelementsSymbolContainer:(OrgMapsforgeCoreMapelementsSymbolContainer *)symbolContainer
-          withOrgMapsforgeCoreGraphicsPositionEnum:(OrgMapsforgeCoreGraphicsPositionEnum *)position
-                                           withInt:(jint)maxTextWidth
+ withOrgMapsforgeCoreGraphicsDisplayEnum:(OrgMapsforgeCoreGraphicsDisplayEnum *)display
+                                 withInt:(jint)priority
+                            withNSString:(NSString *)text
+       withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)paintFront
+       withOrgMapsforgeCoreGraphicsPaint:(id<OrgMapsforgeCoreGraphicsPaint>)paintBack
+withOrgMapsforgeCoreMapelementsSymbolContainer:(OrgMapsforgeCoreMapelementsSymbolContainer *)symbolContainer
+withOrgMapsforgeCoreGraphicsPositionEnum:(OrgMapsforgeCoreGraphicsPositionEnum *)position
+                                 withInt:(jint)maxTextWidth
 {
     self = [super initWithOrgMapsforgeCoreModelPoint:(OrgMapsforgeCoreModelPoint *)point
              withOrgMapsforgeCoreGraphicsDisplayEnum:(OrgMapsforgeCoreGraphicsDisplayEnum *)display
